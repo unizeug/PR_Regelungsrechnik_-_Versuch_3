@@ -1,0 +1,128 @@
+\newcommand{\institut}{}
+\newcommand{\fachgebiet}{Regelungstechnik}
+\newcommand{\veranstaltung}{Praktikum Grundlagen der Regelungstechnik}
+\newcommand{\pdfautor}{Dirk Barbendererde (321 836), Boris Henckell (325 779)}
+\newcommand{\autor}{Dirk Barbendererde (321 836)\\ Boris Henckell (325 779)}
+\newcommand{\pdftitle}{Praktikum\ Regelungstechnik\ Versuch\ 2a}
+\newcommand{\prototitle}{Praktikum Regelungstechnik \\ Versuch 2a}
+\newcommand{\aufgabe}{}
+
+\newcommand{\gruppe}{Gruppe: G1 Di 12-14}
+\newcommand{\betreuer}{Betreuer: Behrang Monajemi Nejad}
+
+
+
+\input{../../packages/tu_header_9}
+%\begin{document}
+
+% \lstlistoflistings
+\definecolor{darkgray}{rgb}{0.95,0.95,0.95}
+\lstset{language=Scilab}
+\lstset{inputencoding=utf8}
+%\lstset{extendedchars=true} % Umlaute an der richtigen stelle und nicht am Anfang ausgeben
+\lstset{backgroundcolor=\color{darkgray}}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=7pt, breaklines=true}
+\lstset{keywordstyle=\color{red}\bfseries\emph}
+\lstset{
+breaklines,
+numbers=left,
+frame=single,
+xleftmargin=-2cm,
+xrightmargin=-1.5cm
+}
+% enables UTF-8 in source code: (dirty, dirty hack)
+\lstset{literate=
+    %Deutsch
+    {ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}
+    {{\"O}}1 {Ü}{{\"U}}1 {ß}{\ss}1
+    %Türkisch
+    {â}{{\^{a}}}1 {Â}{{\^{A}}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {ğ}{{\u{g}}}1 {Ğ}{{\u{G}}}1 {ı}{{\i}}1 {İ}{{\.{I}}}1 {ö}{{\"o}}1 {Ö}{{\"O}}1 {ş}{{\c{s}}}1
+    {Ş}{{\c{S}}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1
+    %Polish
+    {ą}{{\k{a}}}1 {ć}{{\'c}}1 {ę}{{\k{e}}}1 {ł}{{\l{}}}1 {ń}{{\'n}}1 {ó}{{\'o}}1 {ś}{{\'s}}1 {ż}{{\.z}}1 {ź}{{\'z}}1 {Ą}{{\k{A}}}1 {Ć}{{\'C}}1
+    {Ę}{{\k{E}}}1 {Ł}{{\L{}}}1 {Ń}{{\'N}}1 {Ó}{{\'O}}1 {Ś}{{\'S}}1 {Ż}{{\.Z}}1 {Ź}{{\'Z}}1
+    %Spanish
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+}
+
+%     \lstinputlisting{./praktikum6.sce}
+
+
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+
+\section{Vorbereitungsaufgaben}
+\begin{quote}
+	\hspace{-2em}
+	\subsection{Linearisierung}
+    Aufgabe:\\
+    Linearisieren Sie das nichtlineare Modell um die Ruhelage ($z, \varphi$) = ($0, 0$) und berechnen Sie die
+    Transferfunktion von der Stellgröße $u$ zum Ausgang $\varphi$. Skizzieren Sie die Pol-/Nullstellenverteilung des
+    Systems.\vspace{1em}
+    
+    
+\end{quote} %Ende Section Vorbereitungsaufgaben 
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+
+
+
+
+\section{Auswertung}
+\begin{quote}
+
+    
+\end{quote} %Ende Section Ergebnisse
+
+
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\section{Scilabcode}
+\begin{quote}
+\begin{quote}
+%     \lstinputlisting[
+%         caption={Scilab-script},
+%         language=scilab,
+%         label=lst:scilab]
+%         {./Scilab/Pendel2a.sce}
+        
+
+
+\end{quote}
+
+	
+\end{quote} %Ende section
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------    
+
+
+%\begin{thebibliography}{999}
+%\bibitem {Ueberschwingweite} Prof. Dr.-Ing. Raisch, Jörg; Dipl.-Ing. Hess, Anne-Katrin; Dipl.-Ing. Seel, Thomas:
+%Grundlagen der Regelungstechnik - 4.Praktikum, S.5
+%\bibitem {Ausregelzeit} Prof. Dr.-Ing. Raisch, Jörg; Dipl.-Ing. Hess, Anne-Katrin; Dipl.-Ing. Seel, Thomas:
+%Grundlagen der Regelungstechnik - 4.Praktikum, S.5
+
+%\usepackage{url}
+
+
+%\bibitem{krachler}Christian Krachler:
+%\href{http://www.krachler.com/fileadmin/user_upload/arbeiten/Reglersynthese_Christian_Krachler.pdf}{Reglersynthese nach
+% dem Frequenzkennlinienverfahren}, S16, S22, 08.05.2012
+
+%http://krachler.com/fileadmin/user\_upload/arbeiten/Reglersynthese\_Christian\_Krachler.pdf
+
+
+%Name, Vorname.; evtl. Name2, Vorname2.: Titel des Dokumentes
+%oder Buches, Zeitschrift/Verlag/URL (Auflage, Erscheinungsort, -jahr), ggf. Seitenzahlen
+%\bibitem [Wiki10] {DigitaleMesskette2} \url{www.wikipedia.org}, Zugriff 22.03.2010
+%\end{thebibliography}
+
+
+\end{document}

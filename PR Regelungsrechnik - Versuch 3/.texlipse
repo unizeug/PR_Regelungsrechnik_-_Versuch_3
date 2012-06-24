@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sun Jun 24 17:02:51 CEST 2012
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=PR Regelungsrechnik - Versuch 3.tex
+outputFile=PR Regelungsrechnik - Versuch 3.pdf
+langSpell=en
+markDer=true
+srcDir=
