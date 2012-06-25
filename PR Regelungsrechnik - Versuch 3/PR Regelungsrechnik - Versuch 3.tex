@@ -53,16 +53,92 @@
 %---------------------------------------------------------------------
 %---------------------------------------------------------------------
 
-\section{Vorbereitungsaufgaben}
+\section{Reglerentwurf}
 \begin{quote}
 	\hspace{-2em}
-	\subsection{Linearisierung}
-    Aufgabe:\\
-    Linearisieren Sie das nichtlineare Modell um die Ruhelage ($z, \varphi$) = ($0, 0$) und berechnen Sie die
-    Transferfunktion von der Stellgröße $u$ zum Ausgang $\varphi$. Skizzieren Sie die Pol-/Nullstellenverteilung des
-    Systems.\vspace{1em}
+	\subsection{PID-Regler}
+	\label{aufg:3.1}
+    \begin{quote}
+        
+        Da wir für ein nichtlineares System mit Totzeit keinen Regler entwerfen können entwerfen wir zunächst einen
+        Regler für das folgende totzeitfreie System:
+        
+        \TODO{Boris: Formel}
+        
+        Die Dynamik des Führungsverhaltens des resultierenden Regelkreises soll mit dem des folgenden Polpaares
+        ubereinstimmt:
+        
+        \TODO{Boris: Fornell}
+        
+        
+    \end{quote}
     
-    dfgsdfgdsf
+    
+    \subsection{Pad\'e-Approximation}
+    \begin{quote}
+        
+        Als nächstes haben wir die Totzeit mit einer Pad\'e-Approximation erster Ordnung durch eine gebrochen-rationale
+        Funktion ersetzt und multiplizieren sie an unsere Strecke. Für diese Näherung des Systems ($\hat{G}$) entwerfen
+        wir nun einen Regler.
+        
+        
+    \end{quote}
+    
+    \subsection{Reglerentwurf für die Strecke $\hat{G}$}
+    \begin{quote}
+        
+        Mit dem Regleransatz\\
+        
+        \TODO{Boris: Farmvill}
+        
+        und den Vorgeben\\
+        
+        \begin{itemize}
+            
+            \item kein Uberschwingen der Regelgröße bei sprungförmigen Führungs- oder Störsignalen
+            
+            \item ungefähr gleiche Anstiegszeit der Regelgröße wie bei der Verwendung des PID-Regler aus
+            \ref{aufg:3.1}
+            
+            \item Regelfehler $\to$ 0 für t $\to$ $\infty$ unter sprungförmigen Referenzen
+        
+        \end{itemize}
+        \vspace{1em}
+        
+        \begin{enumerate}
+            
+            \item Stellen Sie den Regleransatz mit kleinstmöglicher Nennerordnung und Integratoranteil auf. Wie viele Pole
+            müssen Sie vorgeben?\\
+            
+            \item Stellen Sie das Sollpolpolynom auf; verwenden sie hierzu die Pole des Polpaares aus Aufgabe \ref{aufg:3.1}
+            und die Pole der Strecke G, wählen sie einen weiteren Pol bei ($s_\infty = -2$).\\
+            
+            \item Stellen Sie die Sylvester Matrix durch Koeffizientenvergleich des Polpolynoms des geschlossenen Kreises
+            mit Ihrem Sollpolpolynom auf und berechnen sie die Reglerparameter mithilfe von Scilab.\\
+        
+        \end{enumerate}
+        
+        
+        haben wir den folgenden Regler entworfen:
+        
+        \TODO{Regler}
+        
+        
+    \end{quote}
+    
+    
+    
+    \subsection{Smith-Prädiktor}
+    \begin{quote}
+        
+        Der Smith-Prädiktor für die totzeitbehaftete Strecke einen unter Verwendung des Reglers aus 3.1 ergab sich wie
+        folgt:
+        
+        \TODO{scicos-Ding}
+        
+    \end{quote}
+    
+    
     
     
 \end{quote} %Ende Section Vorbereitungsaufgaben 
