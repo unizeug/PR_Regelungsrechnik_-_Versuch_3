@@ -15,7 +15,7 @@ T    = 1/-p;
 Ti   = -(s1+s2)/s1*s2;
 Td   = 1/-(s1+s2);
 
-K = Kpid * (1/(1+T*s))*(1/Ti)*(1/s)*(s^2*Td*Ti+Ti*s+1);
+K_tilde = Kpid * (1/(1+T*s))*(1/Ti)*(1/s)*(s^2*Td*Ti+Ti*s+1);
 
 
 // zum Vergleichen
@@ -27,7 +27,7 @@ polpaar = roots(P.den);
 
 
 // Sprungantwort
-GKgeschlossen_tilde = (G_tilde*K)/(1+G_tilde*K);
+GKgeschlossen_tilde = (G_tilde*K_tilde)/(1+G_tilde*K_tilde);
 GKgeschlossen2_tilde = (G_tilde*P)/(1+G_tilde*P);
 
 t1=[0:0.1:100];
@@ -68,17 +68,13 @@ for k = 1:2*nI+1
     end
 end
 
-pol_G_dach = roots(G_dach.den);
-qsoll= (s-pol_G_dach(1))*(s-pol_G_dach(2))*(s-pol_G_dach(3))*(s-polpaar(1))*(s-polpaar(2))*(s-2);
+pol_G_dachI = roots(G_dachI.den);
+qsoll= (s-pol_G_dachI(1))*(s-pol_G_dachI(2))*(s-pol_G_dachI(3))*(s-pol_G_dachI(4))*(s-polpaar(1))*(s-polpaar(2))*(s-2);
 
-cvekI = qsoll;
+cvekI = coeff(qsoll)';
 
-//crootsI = polvorgabe(4,0.97)
-//crootsI = [crootsI; crootsI(7)-1; crootsI(7)-2]
-//wunschI=poly(crootsI,'s','r')
-//cvek1I=coeff(wunschI)
-//cvekI=cvek1I([10 9 8 7 6 5 4 3 2 1])';
-//
-////kcoeff=invr(AsI)*cvek;
 kcoeffI=inv(AsI)*cvekI;
-//KposI = syslin('c',kcoeffI(nI+1)*s^(nI-1)+kcoeffI(nI+2)*s^(nI-2) + kcoeffI(nI+3)*s^(nI-3)+kcoeffI(nI+4)*s^(nI-4)+kcoeffI(nI+5)*s^(nI-5),s*(kcoeffI(1)*s^(nI-1)+kcoeffI(2)*s^(nI-2)+kcoeffI(3)*s^(nI-3)+kcoeffI(4)*s^(nI-4)+kcoeffI(5)*s^(nI-5)));
+KposI = syslin('c',kcoeffI(nI+1)*s^(nI-1)+kcoeffI(nI+2)*s^(nI-2) + kcoeffI(nI+3)*s^(nI-3)+kcoeffI(nI+4)*s^(nI-4),s*(kcoeffI(1)*s^(nI-1)+kcoeffI(2)*s^(nI-2)+kcoeffI(3)*s^(nI-3)+kcoeffI(4)*s^(nI-4)));
+
+// Da der Faktor von dem s^4 ersten unerwünscht und zweitens ziemlich klein ist wird er hier vernachlässigt
+KposI_version_2 = syslin('c',kcoeffI(nI+1)*s^(nI-1)+kcoeffI(nI+2)*s^(nI-2) + kcoeffI(nI+3)*s^(nI-3)+kcoeffI(nI+4)*s^(nI-4),s*(kcoeffI(1)*s^(nI-1)+kcoeffI(2)*s^(nI-2)+kcoeffI(3)*s^(nI-3)));
