@@ -1,5 +1,6 @@
 // Boris: cd "/Users/borishenckell/Documents/eclipse workspace/PR_Regelungsrtechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3"
-// Dirk: cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
+// Dirk: 
+cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
 
 
 s = poly(0,'s');
