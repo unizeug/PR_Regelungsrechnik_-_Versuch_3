@@ -1,6 +1,11 @@
 // Regelungstechnik Versuch 3
 
 
+// Boris: cd "/Users/borishenckell/Documents/eclipse workspace/PR_Regelungsrtechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3"
+// Dirk: 
+cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
+
+
 
 s = poly(0, 's');
 
@@ -37,7 +42,7 @@ h2=csim('step',t1,P);
 clf(15);scf(15);
     plot2d(t1,h1)
     plot2d(t1,h2,2)
-    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort P    T2 Glied',4);
+    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort PT2 Glied',4);
     xtitle('Sprungantworten', 'Zeit[s]', 'Temperatur [°c]')
 
 
@@ -72,35 +77,48 @@ end
 
 pol_G_dachI = roots(G_dachI.den);
 qsoll= (s-pol_G_dachI(1))*(s-pol_G_dachI(2))*(s-pol_G_dachI(3))*(s-pol_G_dachI(4))*(s-polpaar(1))*(s-polpaar(2))*(s-2);
+qsoll = clean(qsoll);
 
 cvekI = coeff(qsoll)';
 
-kcoeffI=inv(AsI)*cvekI;
+kcoeffI=clean(inv(AsI)*cvekI);
 KposI = syslin('c',kcoeffI(nI+1)*s^(nI-1)+kcoeffI(nI+2)*s^(nI-2) + kcoeffI(nI+3)*s^(nI-3)+kcoeffI(nI+4)*s^(nI-4),s*(kcoeffI(1)*s^(nI-1)+kcoeffI(2)*s^(nI-2)+kcoeffI(3)*s^(nI-3)+kcoeffI(4)*s^(nI-4)));
 
-clean(KposI);
+KposI = clean(KposI);
 
 // Führungssprung
 //GKgeschlossen = KposI*G_dach/(1+KposI*G_dach)
 
-GKgeschlossen = syslin('c', KposI.num*G_dach.num/(KposI.den*G_dach.den + KposI.num*G_dach.num))
+GKgeschlossen = syslin('c', clean(KposI.num*G_dach.num),clean(KposI.den*G_dach.den + KposI.num*G_dach.num))
 
-clean(GKgeschlossen);
+//clean(GKgeschlossen);
 
-GKgeschlossen = syslin('c', GKgeschlossen.num,GKgeschlossen.den);
+//GKgeschlossen = syslin('c', GKgeschlossen.num,real(GKgeschlossen.den));
 
-S = syslin('c', KposI.den*G_dach.den/(KposI.den*G_dach.den + KposI.num*G_dach.num))
-
-clean(S);
+S = syslin('c', clean(KposI.den*G_dach.den)/(clean(KposI.den*G_dach.den) + clean(KposI.num*G_dach.num)))
+S = syslin('c',S.num,real(S.den));
+S = clean(S);
 
 
 h3=csim('step',t1,GKgeschlossen);
 h4=csim('step',t1,S);
 
-figure(16);
+scf(16);clf(16)
 plot2d(t1,h3);
 
-figure(17);
+scf(17);clf(17);
 plot2d(t1,h4);
 
- 
+
+clf(18);scf(18);
+    plot2d(t1,h3)
+    plot2d(t1,h4,2)
+    legend('T',  'S',4);
+    xtitle('Sensitivitäts- und komplimentäre Sensitivitätsfunktion', 'Zeit[s]', 'K.A.')
+
+// --- pdf abspeichern --- //
+
+xs2pdf(15,'../Bilder/Sprungantwort.pdf');
+xs2pdf(16,'../Bilder/GKgeschlossen.pdf');
+xs2pdf(17,'../Bilder/S.pdf');
+xs2pdf(18,'../Bilder/S_T_Vergleich.pdf');
