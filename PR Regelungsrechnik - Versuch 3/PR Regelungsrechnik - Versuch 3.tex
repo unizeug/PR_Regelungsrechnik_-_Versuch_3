@@ -52,25 +52,39 @@
 	
     \begin{quote}
         
-        Da wir für ein nichtlineares System mit Totzeit keinen Regler entwerfen können entwerfen wir zunächst einen
-        Regler für das folgende totzeitfreie System:
-        
+        Zu Beginn des Reglerentwurfs definieren wir die uns vorgegebene linearisierte Stecke $\tilde{G}$.\\
+        Anschließend erstellen wir folgendermaßen unseren PID-Regler:
         \begin{equation*}
-            \begin{split}
-                \tilde{G}(s) = \frac{V_0}{(s-s_{\infty 1})(s-s_{\infty 2})}
-            \end{split}
-        \end{equation*}
-            
-        Die Dynamik des Führungsverhaltens des resultierenden Regelkreises soll mit dem des folgenden Polpaares
-        ubereinstimmt:
-        
-        \begin{equation*}
-            \begin{split}
-                P(s) = \frac{1}{s^2 \omega^2 + s \frac{2 d}{\omega} + 1}
-            \end{split}
+        	\begin{split}
+        		\tilde{K} &= K_{PID} \  \frac{1}{1 + T s} \ \frac{1}{s} (s^2  T_d T_i + T_i s + 1)\\
+        	\end{split}
         \end{equation*}
         
+        mit 
         
+        \begin{equation*}
+        	\begin{split}
+        		T_i &= \frac{-(s_1 + s_2)}{s_1 s_2}\\
+        		T_d &= \frac{1}{-(s_1 + s_2)}\\
+        	\end{split}
+        \end{equation*}
+        
+        In diesem Fall stellen die beiden Variablen $s_1$ und $s_2$ die Polstellen der Strecke $\tilde{G}$ dar. Auf
+        diese Weise kürzen wir diese schon mal durch den Regeler. Verbleiben noch die Position des Realisierbarkeitspols
+        sowie die Verstärkung des Reglers als Parameter um die Dynamik des Führungsverhaltens des Reglers zu
+        beeinflussen.\\
+        
+        Als Vergleich erstellen wir die Führungssprungantwort des gegebenen Polpaars.\\
+        
+        Mit einer Versärkung von $K_{PID} = 1.6$ und einem Realisierbarkeitspol bei $-20$ erhalten wir folgende
+        Führungssprünge:
+        
+        \begin{figure}[H]
+        \centering
+            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/Sprungantwort}
+                \caption{Führungssprungantwort}
+        \end{figure}
+    
     \end{quote}
     
     
@@ -85,8 +99,14 @@
         
         Als nächstes haben wir die Totzeit mit einer Pad\'e-Approximation erster Ordnung durch eine gebrochen-rationale
         Funktion ersetzt und multiplizieren sie an unsere Strecke. Für diese Näherung des Systems ($\hat{G}$) entwerfen
-        wir nun einen Regler.
+        wir nun einen Regler.\vspace{1em}
         
+        Die Approximation lautet:
+        \begin{equation*}
+        	\begin{split}
+        		p_1(s) = \frac{1-\frac{\tau}{2}s}{1+\frac{\tau}{2}s}
+        	\end{split}
+        \end{equation*}
         
     \end{quote}
     
