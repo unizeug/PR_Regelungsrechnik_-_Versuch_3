@@ -3,7 +3,7 @@
 
 // Boris: cd "/Users/borishenckell/Documents/eclipse workspace/PR_Regelungsrtechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3"
 // Dirk: 
-cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
+//cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
 
 
 
@@ -118,7 +118,7 @@ clf(18);scf(18);
 
 // --- pdf abspeichern --- //
 
-xs2pdf(15,'../Bilder/Sprungantwort.pdf');
-xs2pdf(16,'../Bilder/GKgeschlossen.pdf');
-xs2pdf(17,'../Bilder/S.pdf');
-xs2pdf(18,'../Bilder/S_T_Vergleich.pdf');
+//xs2pdf(15,'../Bilder/Sprungantwort.pdf');
+//xs2pdf(16,'../Bilder/GKgeschlossen.pdf');
+//xs2pdf(17,'../Bilder/S.pdf');
+//xs2pdf(18,'../Bilder/S_T_Vergleich.pdf');

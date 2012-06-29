@@ -29,23 +29,58 @@
 	\hspace{-2em}
 	\subsection{PID-Regler}
 	\label{aufg:3.1}
+	
+	Aufgabe:\\
+	Entwerfen Sie für das totzeitfreie System
+	
+	\begin{equation*}
+    	\begin{split}
+    		\tilde{G}(s) = \frac{V_0}{(s-s_{\infty 1})(s-s_{\infty 2})}
+    	\end{split}
+    \end{equation*}
+	
+	einen (realen) PID-Regler $K_{PID}$, indem sie beide Polstellen der Strecke kürzen. Die übrigen Parameter sollen so
+	bestimmt werden, dass die Dynamik des Führungsverhaltens des resultierenden Regelkreises mit dem des folgenden Polpaares übereinstimmt:
+	
+	\begin{equation*}
+    	\begin{split}
+    		P(s) = \frac{1}{s^2 \omega^2 + s \frac{2 d}{\omega} + 1}
+    	\end{split}
+    \end{equation*}
+	
+	Der Regelkreis soll also relativ schnell sein, jedoch ohne dass dabei Überschwingen auftritt.\vspace{1em}
+	
     \begin{quote}
         
         Da wir für ein nichtlineares System mit Totzeit keinen Regler entwerfen können entwerfen wir zunächst einen
         Regler für das folgende totzeitfreie System:
         
-        \TODO{Boris: Formel}
-        
+        \begin{equation*}
+            \begin{split}
+                \tilde{G}(s) = \frac{V_0}{(s-s_{\infty 1})(s-s_{\infty 2})}
+            \end{split}
+        \end{equation*}
+            
         Die Dynamik des Führungsverhaltens des resultierenden Regelkreises soll mit dem des folgenden Polpaares
         ubereinstimmt:
         
-        \TODO{Boris: Fornell}
+        \begin{equation*}
+            \begin{split}
+                P(s) = \frac{1}{s^2 \omega^2 + s \frac{2 d}{\omega} + 1}
+            \end{split}
+        \end{equation*}
         
         
     \end{quote}
     
     
     \subsection{Pad\'e-Approximation}
+    
+    Aufgabe:\\
+    Approximieren Sie den Term $e^{-sT_d}$, welcher für die Totzeit verantwortlich ist, mithilfe einer
+    Pad\'e-Approximation erster Ordnung durch eine gebrochen-rationale Funktion und stellen Sie das approximierte
+    Streckenmodell $\tilde{G}$ auf, indem Sie die Totzeit in $G$ durch ihre Approximation ersetzen. \vspace{1em}
+    
     \begin{quote}
         
         Als nächstes haben wir die Totzeit mit einer Pad\'e-Approximation erster Ordnung durch eine gebrochen-rationale
@@ -56,17 +91,13 @@
     \end{quote}
     
     \subsection{Reglerentwurf für die Strecke $\hat{G}$}
-    \begin{quote}
-        
-        Mit dem Regleransatz\\
-        
-        \TODO{Boris: Farmvill}
-        
-        und den Vorgeben\\
+    Aufgabe:\\
+    Es soll ein Regler für das approximierte Streckenmodell $\tilde{G}$ mittels Polvorgabe entworfen werden, der
+    folgende Eigenschaften des geschlossenen Kreises ermöglicht:
         
         \begin{itemize}
             
-            \item kein Uberschwingen der Regelgröße bei sprungförmigen Führungs- oder Störsignalen
+            \item kein Überschwingen der Regelgröße bei sprungförmigen Führungs- oder Störsignalen
             
             \item ungefähr gleiche Anstiegszeit der Regelgröße wie bei der Verwendung des PID-Regler aus
             \ref{aufg:3.1}
@@ -82,13 +113,22 @@
             müssen Sie vorgeben?\\
             
             \item Stellen Sie das Sollpolpolynom auf; verwenden sie hierzu die Pole des Polpaares aus Aufgabe \ref{aufg:3.1}
-            und die Pole der Strecke G, wählen sie einen weiteren Pol bei ($s_\infty = -2$).\\
+            und die Pole der Strecke $G$, wählen sie einen weiteren Pol bei ($s_\infty = -2$).\\
             
             \item Stellen Sie die Sylvester Matrix durch Koeffizientenvergleich des Polpolynoms des geschlossenen Kreises
             mit Ihrem Sollpolpolynom auf und berechnen sie die Reglerparameter mithilfe von Scilab.\\
         
         \end{enumerate}
         
+        Mit dem Regleransatz\\
+        
+        \begin{equation*}
+            \begin{split}
+                K(s) = \frac{\beta_0 + \beta_1 s + \beta_2 s^2 + \beta_3 s^3}{s(\alpha_0 + \alpha_1 s + s^2)}
+            \end{split}
+        \end{equation*}\vspace{1em}
+        
+       \begin{quote}
         
         haben wir den folgenden Regler entworfen:
         
@@ -100,6 +140,11 @@
     
     
     \subsection{Smith-Prädiktor}
+    Aufgabe:\\
+    Entwerfen Sie für die totzeitbehaftete Strecke einen Smith-Prädiktor unter Verwendung des Reglers aus
+    \ref{aufg:3.1}\vspace{1em}
+    
+    
     \begin{quote}
         
         Der Smith-Prädiktor für die totzeitbehaftete Strecke einen unter Verwendung des Reglers aus \ref{aufg:3.1} ergab sich wie folgt:
@@ -118,34 +163,52 @@
 \begin{quote}
     
     \subsection{Stabilität mit steigender Totzeit}
-    Simulieren Sie den PID Regler zunächst ohne Totzeit mit einem Führungssprung der Amplitude
-    \SI{+30}{\celsius} mit dem idealen PT2-Modell! Fügen Sie dem Modell solange größer werdende Totzeiten (Td = 0.4,
-    0.8, \ldots) hinzu, bis der Regelkreis instabil wird! Beschreiben Sie kurz, welchen Einﬂuss die Totzeit auf das
-    Regelkreisverhalten hat!
+    Aufgabe:\\
+    Simulieren Sie den PID Regler zunächst ohne Totzeit mit einem Führungssprung der Amplitude $+30^{\circ}C$ mit dem
+    idealen $PT2$-Modell! Fügen Sie dem Modell solange größer werdende Totzeiten ($T_d = 0.4, 0.8, . . .$) hinzu, bis
+    der Regelkreis instabil wird! Beschreiben Sie kurz, welchen Einfluss die Totzeit auf das Regelkreisverhalten
+    hat!\vspace{1em}
+    
     \begin{quote}
-        
+    
     \end{quote}
     
-    
     \subsection{Regelkreis mit PID-Regler}
+    Aufgabe:\\
+    Simulieren Sie den Regelkreis mit PID-Regler (ab hier immer mit Totzeit und dem vorgegebenen Scicos- Modell von der
+    Webseite) unter einer sprungförmigen Referenz der Amplitude $+30^{\circ}C$ ! Kommentieren Sie kurz Ihre
+    Beobachtungen!\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Smith-Prädiktor}
+    Aufgabe:\\
+    Implementieren Sie ihren Smith-Prädiktor und simulieren Sie erneut! Was ändert sich, was bleibt gleich?\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Pad\'e-Approximation}
+    Aufgabe:\\
+    Implementieren Sie nun auch den Regler auf Basis der Pad\'e-Approximation und simulieren Sie einen Führungssprung
+    $+30^{\circ} C$ ! Wie ist die Regelgüte im Vergleich zum PID-Regler mit Smith-Prädiktor?\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Führungsverhalten beim Störfall}
+    Aufgabe:\\
+    Erproben sie nun einen Störfall: Erhöhen Sie die Totzeit (nur die des Modells, die Regler bleiben die gleichen)
+    auf $T_d = 0.7s$ und simulieren Sie erneut das Führungsverhalten beider Regelkreise! Kommentieren Sie kurz das
+    Ergebnis!\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
@@ -163,30 +226,53 @@
     
     
     \subsection{Arbeitspunkttemperatur}
+    
+    Aufgabe:\\
+    Ermitteln Sie die Temperatur, die sich bei einer Heizleistung von $10$ einstellt und verwenden Sie diese als
+    Arbeitspunkttemperatur!\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Führungssprung des PID-Reglers}
+    
+    Augabe:\\
+    Implementieren Sie den PID-Regler (zunächst ohne Smith-Prädiktor) am Versuchsstand und führen Sie einen
+    Führungssprung um $+30^{\circ} C$ aus! Die Stellgrößen als auch die Temperatur sind jeweils für jeden Versuch
+    aufzuzeichen.\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Führungssprung mit Smith-Prädiktor}
+    
+    Aufgabe:\\
+    Fügen Sie nun den Smith-Prädiktor hinzu und starten Sie wiederum das Experiment!\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Regler auf Approximationsbasis}
+    
+    Aufgabe:\\
+    Erproben Sie ebenfalls den Regler auf Approximationsbasis!\vspace{1em}
+    
     \begin{quote}
         
     \end{quote}
     
     
     \subsection{Vergleich der Messergebnisse}
+    
+    Aufgabe:\\
+    Vergleichen Sie ihre Messergebnisse untereinander und mit den Simulationen!
+    
     \begin{quote}
         
     \end{quote}
