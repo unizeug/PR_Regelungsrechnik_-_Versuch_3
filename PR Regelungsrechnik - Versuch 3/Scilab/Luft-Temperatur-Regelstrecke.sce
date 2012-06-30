@@ -50,7 +50,7 @@ clf(15);scf(15);
 
 // Pade-Appriximation
 
-tau=0.4; // 0.4
+tau = 0.4; // 0.4
 
 p1 = (1-tau/2*s)/(1+tau/2*s);
 G_dach=G_tilde*p1;
