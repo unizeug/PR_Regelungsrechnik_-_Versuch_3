@@ -195,8 +195,82 @@
     der Regelkreis instabil wird! Beschreiben Sie kurz, welchen Einfluss die Totzeit auf das Regelkreisverhalten
     hat!\vspace{1em}
     
-    \begin{quote}
-    
+            \begin{center}
+                \begin{tabular}{ll}
+                
+                \hspace{-1cm}
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_1_Td_0}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d$ = 0}
+                        \end{figure}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_1_Td_04}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d$ = 0.4}
+                        \end{figure}
+                    \end{minipage}
+                
+                \end{tabular}
+            \end{center}
+
+            \begin{center}
+                \begin{tabular}{ll}
+                
+                \hspace{-1cm}
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_1_Td_08}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 0.8$}
+                        \end{figure}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_1_Td_12}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 1.2$}
+                        \end{figure}
+                    \end{minipage}
+                
+                \end{tabular}
+            \end{center}
+
+            \begin{center}
+                \begin{tabular}{ll}
+                
+                \hspace{-1cm}
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_1_Td_16}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 1.6$}
+                        \end{figure}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_1_Td_16_600s}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 1.6$ 600s}
+                        \end{figure}
+                    \end{minipage}
+                
+                \end{tabular}
+            \end{center}
+
+
     \end{quote}
     
     \subsection{Regelkreis mit PID-Regler}
@@ -206,7 +280,12 @@
     Beobachtungen!\vspace{1em}
     
     \begin{quote}
-        
+        \begin{figure}[H]
+        \centering
+            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_2_Td_04}
+                \caption{Sprungantwort PID Regler nicht-lin. Modell Totzeit $T_d = 0.4$}
+        \end{figure}
+    
     \end{quote}
     
     
@@ -215,7 +294,12 @@
     Implementieren Sie ihren Smith-Prädiktor und simulieren Sie erneut! Was ändert sich, was bleibt gleich?\vspace{1em}
     
     \begin{quote}
-        
+        \begin{figure}[H]
+        \centering
+            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_3_Td_04}
+                \caption{Sprungantwort PID Regler nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
+        \end{figure}
+    
     \end{quote}
     
     
@@ -225,6 +309,13 @@
     $+30^{\circ} C$ ! Wie ist die Regelgüte im Vergleich zum PID-Regler mit Smith-Prädiktor?\vspace{1em}
     
     \begin{quote}
+
+    \begin{quote}
+        \begin{figure}[H]
+        \centering
+            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_4_Td_04}
+                \caption{Sprungantwort PID Regler Pade (KposI) nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
+        \end{figure}
         
     \end{quote}
     
@@ -236,6 +327,31 @@
     Ergebnis!\vspace{1em}
     
     \begin{quote}
+ 
+            \begin{center}
+                \begin{tabular}{ll}
+                
+                \hspace{-1cm}
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_5_Td_04_K_tilde}
+                              \caption{Sprungantwort PID Regler(KposI) lin. Modell Totzeit Strecke $T_d = 0.7$}
+                        \end{figure}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
+                            0cm, clip]
+                            {./Bilder/4_5_Td_04_KposI}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit Strecke $T_d = 0.7$ }
+                        \end{figure}
+                    \end{minipage}
+                
+                \end{tabular}
+            \end{center} 
         
     \end{quote}
     
