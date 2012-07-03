@@ -119,8 +119,7 @@
             
             \item kein Überschwingen der Regelgröße bei sprungförmigen Führungs- oder Störsignalen
             
-            \item ungefähr gleiche Anstiegszeit der Regelgröße wie bei der Verwendung des PID-Regler aus
-            \ref{aufg:3.1}
+            \item ungefähr gleiche Anstiegszeit der Regelgröße wie bei der Verwendung des PID-Regler aus \ref{aufg:3.1}
             
             \item Regelfehler $\to$ 0 für t $\to$ $\infty$ unter sprungförmigen Referenzen
         
@@ -130,13 +129,13 @@
         \begin{enumerate}
             
             \item Stellen Sie den Regleransatz mit kleinstmöglicher Nennerordnung und Integratoranteil auf. Wie viele Pole
-            müssen Sie vorgeben?\\
+            müssen Sie vorgeben?
             
             \item Stellen Sie das Sollpolpolynom auf; verwenden sie hierzu die Pole des Polpaares aus Aufgabe \ref{aufg:3.1}
-            und die Pole der Strecke $G$, wählen sie einen weiteren Pol bei ($s_\infty = -2$).\\
+            und die Pole der Strecke $G$, wählen sie einen weiteren Pol bei ($s_\infty = -2$).
             
             \item Stellen Sie die Sylvester Matrix durch Koeffizientenvergleich des Polpolynoms des geschlossenen Kreises
-            mit Ihrem Sollpolpolynom auf und berechnen sie die Reglerparameter mithilfe von Scilab.\\
+            mit Ihrem Sollpolpolynom auf und berechnen sie die Reglerparameter mithilfe von Scilab.
         
         \end{enumerate}\vspace{1em}
         
@@ -179,7 +178,7 @@
         
     \end{quote}
     
-\end{quote} %Ende Section Vorbereitungsaufgaben 
+\end{quote} %Ende Section Reglerentwurf 
 
 %--------------------------------------------------------------------
 %--------------------------------------------------------------------
@@ -188,12 +187,17 @@
 \section{Simulation}
 \begin{quote}
     
+    
+    
     \subsection{Stabilität mit steigender Totzeit}
-    Aufgabe:\\
+    \begin{quote}
+        
+    \end{quote}
+    Aufgabe:%\\
     Simulieren Sie den PID Regler zunächst ohne Totzeit mit einem Führungssprung der Amplitude $+30^{\circ}C$ mit dem
     idealen $PT2$-Modell! Fügen Sie dem Modell solange größer werdende Totzeiten ($T_d = 0.4, 0.8, . . .$) hinzu, bis
     der Regelkreis instabil wird! Beschreiben Sie kurz, welchen Einfluss die Totzeit auf das Regelkreisverhalten
-    hat!\vspace{1em}
+    hat!%\vspace{1em}
     
     \begin{quote}
             \begin{center}
@@ -314,7 +318,8 @@
     Aufgabe:\\
     Implementieren Sie nun auch den Regler auf Basis der Pad\'e-Approximation und simulieren Sie einen Führungssprung
     $+30^{\circ} C$ ! Wie ist die Regelgüte im Vergleich zum PID-Regler mit Smith-Prädiktor?\vspace{1em}
-
+    
+    
     \begin{quote}
         \begin{figure}[H]
         \centering
@@ -373,7 +378,9 @@
     
     
     \subsection{Arbeitspunkttemperatur}
-    
+    \begin{quote}
+        
+    \end{quote}
     Aufgabe:\\
     Ermitteln Sie die Temperatur, die sich bei einer Heizleistung von $10$ einstellt und verwenden Sie diese als
     Arbeitspunkttemperatur!\vspace{1em}
@@ -381,7 +388,6 @@
     \begin{quote}
         
     \end{quote}
-    
     
     \subsection{Führungssprung des PID-Reglers}
     
