@@ -200,7 +200,6 @@
     hat!%\vspace{1em}
     
     \begin{quote}
-        
             \begin{center}
                 \begin{tabular}{ll}
                 
@@ -275,7 +274,13 @@
                 
                 \end{tabular}
             \end{center}
-
+    
+        Anhand der 5 Simulationen mit steigender Totzeit lässt sich erkennen, dass die Sprungantwort zunehmend
+        überschwingt. Bei dieser Simulation hat der Regler keine Ahnung von der Totzeit und erwartet eine sofortige
+        Reaktion auf seine Reglung. Da diese jedoch erst verspätet bei dem Regler ankommt übersteuert er. Je größer die
+        Totzeit ist umso mehr fällt dieser Effekt auf. In unserem Fall schafft es der Regler für eine Totzeit von $1.6
+        \ s$ nicht mehr, aus dem Überwingen rauszukommen und wir instabil.
+    
 
     \end{quote}
     
@@ -380,6 +385,9 @@
     Ermitteln Sie die Temperatur, die sich bei einer Heizleistung von $10$ einstellt und verwenden Sie diese als
     Arbeitspunkttemperatur!\vspace{1em}
     
+    \begin{quote}
+        
+    \end{quote}
     
     \subsection{Führungssprung des PID-Reglers}
     
