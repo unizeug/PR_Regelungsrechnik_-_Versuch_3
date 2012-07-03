@@ -315,6 +315,10 @@
                \caption{Sprungantwort PID Regler nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
         \end{figure}
     
+        Bei dieser Simulation wurde ein Smith-Prädiktor hinzugefügt. Dieser zeigt seine Aufwirkung auf die
+        Sprungantwort, in dem sie weicher verläuft und auch kein bisschen mehr überschwingt. Diese Sprungantwort hat den
+        bisher besten verlauf, der bis hierher betrachteten Sprungantworten.
+    
     \end{quote}
     
     
@@ -330,6 +334,11 @@
             \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_4_Td_04}
                 \caption{Sprungantwort PID Regler Pade (KposI) nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
         \end{figure}
+        
+        Bei dem Regler mit Pad\'e Approximation verschlechtert sich das Sprungverhalten wieder auffällig. Es ist wieder
+        ein überschwingen zu erkennen. Das ist auch nicht verwunderlich, da die Totzeit bei diesem Regeler nur
+        angenähert wurde, während die Totzeit bei dem Smith-Prädiktor durch ein \"Delay\"-Block dargestellt wurde, der
+        genauer arbeitet als die Approximation.
         
     \end{quote}
     
@@ -351,7 +360,7 @@
                             \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
                             0cm, clip]
                             {./Bilder/4_5_Td_04_K_tilde}
-                              \caption{Sprungantwort PID Regler(KposI) lin. Modell Totzeit Strecke $T_d = 0.7$}
+                              \caption{Sprungantwort PID Regler lin. Modell Totzeit Strecke $T_d = 0.7$}
                         \end{figure}
                     \end{minipage}
                     
@@ -360,12 +369,13 @@
                             \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
                             0cm, clip]
                             {./Bilder/4_5_Td_04_KposI}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit Strecke $T_d = 0.7$ }
+                              \caption{Sprungantwort PID Regler(KposI) lin. Modell Totzeit Strecke $T_d = 0.7$ }
                         \end{figure}
                     \end{minipage}
                 
                 \end{tabular}
             \end{center} 
+        
         
     \end{quote}
     
