@@ -13,7 +13,7 @@
 
 
 \input{../../packages/tu_header_9}
-%\begin{document}
+\begin{document}
 
 
 %     \lstinputlisting{./praktikum6.sce}
@@ -195,6 +195,7 @@
     der Regelkreis instabil wird! Beschreiben Sie kurz, welchen Einfluss die Totzeit auf das Regelkreisverhalten
     hat!\vspace{1em}
     
+    \begin{quote}
             \begin{center}
                 \begin{tabular}{ll}
                 
@@ -269,7 +270,13 @@
                 
                 \end{tabular}
             \end{center}
-
+    
+        Anhand der 5 Simulationen mit steigender Totzeit lässt sich erkennen, dass die Sprungantwort zunehmend
+        überschwingt. Bei dieser Simulation hat der Regler keine Ahnung von der Totzeit und erwartet eine sofortige
+        Reaktion auf seine Reglung. Da diese jedoch erst verspätet bei dem Regler ankommt übersteuert er. Je größer die
+        Totzeit ist umso mehr fällt dieser Effekt auf. In unserem Fall schafft es der Regler für eine Totzeit von $1.6
+        \ s$ nicht mehr, aus dem Überwingen rauszukommen und wir instabil.
+    
 
     \end{quote}
     
@@ -307,8 +314,6 @@
     Aufgabe:\\
     Implementieren Sie nun auch den Regler auf Basis der Pad\'e-Approximation und simulieren Sie einen Führungssprung
     $+30^{\circ} C$ ! Wie ist die Regelgüte im Vergleich zum PID-Regler mit Smith-Prädiktor?\vspace{1em}
-    
-    \begin{quote}
 
     \begin{quote}
         \begin{figure}[H]
