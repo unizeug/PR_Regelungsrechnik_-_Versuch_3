@@ -10,10 +10,10 @@
 s = poly(0, 's');
 
 
-Kpid = 1.6;        // Verstärkung
+Kpid = 1.355;        // Verstärkung
 s1   = -0.29;    // Polstellen der Strecke
 s2   = -3.12;    // Polstellen der Strecke
-p    =  -20         // Realisierbarkeitspole 
+p    =  -3.6         // Realisierbarkeitspole 
 T    = 1/-p;
 Ti   = -(s1+s2)/(s1*s2);
 Td   = 1/-(s1+s2);
@@ -41,11 +41,11 @@ t1=[0:0.1:100];
 h1=csim('step',t1,GKgeschlossen_tilde);
 h2=csim('step',t1,P);
 
-clf(15);scf(15);
-    plot2d(t1,h1)
-    plot2d(t1,h2,2)
-    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort PT2 Glied',4);
-    xtitle('Sprungantworten', 'Zeit[s]', 'Temperatur [°c]')
+//clf(15);scf(15);
+//    plot2d(t1,h1)
+//    plot2d(t1,h2,2)
+//    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort PT2 Glied',4);
+//    xtitle('Sprungantworten', 'Zeit[s]', 'Temperatur [°c]')
 
 
 // Pade-Appriximation
@@ -106,18 +106,18 @@ S = clean(S);
 h3=csim('step',t1,GKgeschlossen);
 h4=csim('step',t1,S);
 
-scf(16);clf(16)
-plot2d(t1,h3);
+//scf(16);clf(16)
+//plot2d(t1,h3);
 
-scf(17);clf(17);
-plot2d(t1,h4);
+//scf(17);clf(17);
+//plot2d(t1,h4);
 
 
-clf(18);scf(18);
-    plot2d(t1,h3)
-    plot2d(t1,h4,2)
-    legend('T',  'S',4);
-    xtitle('Sensitivitäts- und komplimentäre Sensitivitätsfunktion', 'Zeit[s]', 'K.A.')
+//clf(18);scf(18);
+//    plot2d(t1,h3)
+//    plot2d(t1,h4,2)
+//    legend('T',  'S',4);
+//    xtitle('Sensitivitäts- und komplimentäre Sensitivitätsfunktion', 'Zeit[s]', 'K.A.')
 
 // --- pdf abspeichern --- //
 
