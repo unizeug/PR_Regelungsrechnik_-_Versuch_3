@@ -205,7 +205,7 @@
     
     \begin{quote}
         
-        Der Smith-Prädiktor für die totzeitbehaftete Strecke einen unter Verwendung des Reglers aus \ref{aufg:3.1} ergab sich wie folgt:
+        Der Smith-Prädiktor für die totzeitbehaftete Strecke unter Verwendung des Reglers aus \ref{aufg:3.1} ergab sich wie folgt:
         
        \begin{figure}[H]
         \centering
@@ -314,21 +314,23 @@
                 
                 \end{tabular}
             \end{center}
+            
+            \vspace{1em}
+            
+            
+        \begin{figure}[H]
+        \centering
+            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_1_Simulation}
+                \caption{Simulationsergebnisse}
+        \end{figure}
         
-        \vspace{1em}
-    \begin{figure}[H]
-    \centering
-        \includegraphics[scale=0.4, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_1_Simulation}
-            \caption{Simulationsergebnisse}
-    \end{figure}
-  
         Anhand der 5 Simulationen mit steigender Totzeit lässt sich erkennen, dass die Sprungantwort zunehmend
         überschwingt. Bei dieser Simulation hat der Regler keine Ahnung von der Totzeit und erwartet eine sofortige
         Reaktion auf seine Reglung. Da diese jedoch erst verspätet bei dem Regler ankommt übersteuert er. Je größer die
         Totzeit ist umso mehr fällt dieser Effekt auf. In unserem Fall schafft es der Regler für eine Totzeit von $1.6
-        \ s$ nicht mehr, aus dem Überwingen rauszukommen und wir instabil.
+        \ s$ nicht mehr, aus dem Überwingen rauszukommen und wir instabil.\\
+        \vspace{1em}
     
-
     \end{quote}
     
     \subsection{Regelkreis mit PID-Regler}
@@ -343,12 +345,14 @@
             \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_2_Td_04}
                 \caption{Sprungantwort PID Regler nicht-lin. Modell Totzeit $T_d = 0.4$}
         \end{figure}
-    
+        
         Bei dieser Simulation wurde anstatt des linearisierten Modells der Stecke, das nichtlinearisierte Modell
         verwandt. Es fällt auf, dass dieses Modell besser die Temperatur des Arbeitspunktes ansteuern kann. Die
         Sprungantwort reagiert ein klein bisschen weniger Überschwingen als es das lineare Modelle mit der selben
-        Totzeit gemacht hat.
-    
+        Totzeit gemacht hat.\\
+        \vspace{1em}
+        
+        
     \end{quote}
     
     \subsection{Smith-Prädiktor}
@@ -361,11 +365,12 @@
             \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_3_Td_04}
                \caption{Sprungantwort PID Regler nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
         \end{figure}
-    
+        
         Bei dieser Simulation wurde ein Smith-Prädiktor hinzugefügt. Dieser zeigt seine Aufwirkung auf die
         Sprungantwort, in dem sie weicher verläuft und auch kein bisschen mehr überschwingt. Diese Sprungantwort hat den
-        bisher besten verlauf, der bis hierher betrachteten Sprungantworten.
-    
+        bisher besten verlauf, der bis hierher betrachteten Sprungantworten.\\
+        \vspace{1em}
+        
     \end{quote}
     
     
@@ -385,7 +390,8 @@
         Bei dem Regler mit Pad\'e Approximation verschlechtert sich das Sprungverhalten wieder auffällig. Es ist wieder
         ein überschwingen zu erkennen. Das ist auch nicht verwunderlich, da die Totzeit bei diesem Regeler nur
         angenähert wurde, während die Totzeit bei dem Smith-Prädiktor durch ein ``Delay''-Block dargestellt wurde, der
-        genauer arbeitet als die Approximation.
+        genauer arbeitet als die Approximation.\\
+        \vspace{1em}
         
     \end{quote}
     
@@ -397,35 +403,38 @@
     Ergebnis!\vspace{1em}
     
     \begin{quote}
- 
-            \begin{center}
-                \begin{tabular}{ll}
+    
+        \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-2.5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
+                        0cm, clip]
+                        {./Bilder/4_5_Td_04_K_tilde}
+                          \caption{Sprungantwort PID Regler nicht-lin. Modell Totzeit Strecke $T_d = 0.7$}
+                    \end{figure}
+                \end{minipage}
                 
-                \hspace{-2.5cm}
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_5_Td_04_K_tilde}
-                              \caption{Sprungantwort PID Regler nicht-lin. Modell Totzeit Strecke $T_d = 0.7$}
-                        \end{figure}
-                    \end{minipage}
-                    
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_5_Td_04_KposI}
-                              \caption{Sprungantwort PID Regler(KposI) nicht-lin. Modell Totzeit Strecke $T_d = 0.7$ }
-                        \end{figure}
-                    \end{minipage}
-                
-                \end{tabular}
-            \end{center} 
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
+                        0cm, clip]
+                        {./Bilder/4_5_Td_04_KposI}
+                          \caption{Sprungantwort PID Regler(KposI) nicht-lin. Modell Totzeit Strecke $T_d = 0.7$ }
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+        \end{center}
+        \vspace{1em}
         
         
-        Auch bei der Sprungantwort mit falscher Totzeit schwingt der Regler mit Smith-Prädiktor weniger über. Wir
-        erwarten also, dass er in jeder hinsicht stabiler
+        Auch bei der Sprungantwort mit falscher Totzeit schwingt der Regler mit Smith-Prädiktor weniger über, ist also
+        deutlich stailer.
+        Wir erwarten also, dass er in jeder hinsicht besser ist als der Regler mit Pad\'e-Approximation.\\
+        \vspace{1em}
         
     \end{quote}
     
@@ -450,7 +459,13 @@
     Arbeitspunkttemperatur!\vspace{1em}
     
     \begin{quote}
-        simulation: start bei $30^{\circ}$ sprung um $31^{\circ}$
+        \TODO{SICHER??? simulation: start bei $30^{\circ}$ sprung um $31^{\circ}$}
+        
+        Der Arbeitspunkt mit einer Heizleistung von 10 lag bei $31^{\circ} C$. Da die Außentemperatur sehr hoch war hat
+        sich das System jedoch nicht immer wieder vollständig auf den Arbeitspunkt abgekühlt, weshalb einige Messungen bei etwas über dem
+        arbeitspunkt starteten.\\
+        
+        
     \end{quote}
     
     
@@ -468,24 +483,24 @@
     
     \begin{quote}
         Nun haben wir alle drei Regler nacheinander implementiert und getestet. Wir haben, um die Führungssprungantwort zu
-        messen, einen Sprung von $30^{\circ}$ nach $61^{\circ}$ auf die Regelstrecke gegeben.
+        messen, einen Sprung von $31^{\circ} C$ nach $61^{\circ} C$ auf die Regelstrecke gegeben.\\
         
         \begin{figure}[H]
-            \centering\fbox{
-            \includegraphics[scale=1, trim = 1cm 0.5cm 1cm 1cm, clip]{Bilder/5}}
+            \centering
+            \includegraphics[scale=1, trim = 1cm 0.5cm 1cm 1cm, clip]{Bilder/5}
             \caption{Gemessene Führungssprungantwort}
             \label{fig:5}
         \end{figure}
         \vspace{1em}
         
-        Unerwarteter Weise verhält sich das System überhaupt nicht wie Simuliert. Bei näheren Nachforschungen ergab
+        Unerwarteter Weise verhielt sich das System überhaupt nicht wie Simuliert. Bei näheren Nachforschungen ergab
         sich, dass sich die Parameter der echten Strecke zu stark von denen des vorgegeben Modells unterscheiden hatten. Die
-        Einstellungen des Systems waren beim Versuchsaufbau deutlich anders als wir bem Entwurf der Regler angenommen
-        hatten.\\
+        Einstellungen des Systems waren beim Versuchsaufbau also deutlich anders als wir bem Entwurf der Regler
+        angenommen hatten.\\
         Vor allem war die Streckenverstärkung deutlich geringer als wir angenommen hatten, weshalb die Verstärkung
         unserer Regler nicht ausreichend war. In Abb. \ref{fig:5} ist deutlich zu erkennen, dass es alle
         unsere Regler nach 15 Sekunden gerade einmal geschafft haben auf $40^{\circ}$ zu heizen obwohl sie schon nach
-        ca. 5 Sekunden bei $60^{\circ}$ sein sollten.\\
+        ca. 5 Sekunden bei $60^{\circ}$ hätten sein sollen.\\
         Somit sind die Messergebnisse offensichtlich nicht mit den Simulierten vergleichbar. Aufgrund des falschen
         Reglerentwurfs sind leider auch keine rückschlüsse auf die Eignung Bzw. Qualität der Regler möglich.
         
