@@ -51,7 +51,7 @@
     	\end{split}
     \end{equation*}
 	
-	Der Regelkreis soll also relativ schnell sein, jedoch ohne dass dabei Überschwingen auftritt.\vspace{1em}
+	Der Regelkreis soll also relativ schnell sein, jedoch ohne dass dabei Überschwingen auftritt.\vspace{3em}
 	
     \begin{quote}
         
@@ -115,10 +115,9 @@
     
     \subsection{Reglerentwurf für die Strecke $\hat{G}$}
     Aufgabe:\\
-    Es soll ein Regler für das approximierte Streckenmodell $\tildeoderhat{G}$ mittels Polvorgabe entworfen werden, der
+    Es soll ein Regler für das approximierte Streckenmodell $\hat{G}$ mittels Polvorgabe entworfen werden, der
     folgende Eigenschaften des geschlossenen Kreises ermöglicht:
         
-        \TODO{tilde oder hat?}
         
         \begin{itemize}
             
@@ -454,45 +453,45 @@
         simulation: start bei $30^{\circ}$ sprung um $31^{\circ}$
     \end{quote}
     
-    \subsection{Führungssprung des PID-Reglers}
+    
+    
+    \subsection{Führungssprung}
     
     Augabe:\\
     Implementieren Sie den PID-Regler (zunächst ohne Smith-Prädiktor) am Versuchsstand und führen Sie einen
     Führungssprung um $+30^{\circ} C$ aus! Die Stellgrößen als auch die Temperatur sind jeweils für jeden Versuch
-    aufzuzeichen.\vspace{1em}
-    
-    \begin{quote}
-        
-    \end{quote}
-    
-    
-    \subsection{Führungssprung mit Smith-Prädiktor}
-    
-    Aufgabe:\\
-    Fügen Sie nun den Smith-Prädiktor hinzu und starten Sie wiederum das Experiment!\vspace{1em}
-    
-    \begin{quote}
-        
-    \end{quote}
-    
-    
-    \subsection{Regler auf Approximationsbasis}
-    
-    Aufgabe:\\
+    aufzuzeichen.\\
+    Fügen Sie nun den Smith-Prädiktor hinzu und starten Sie wiederum das Experiment!\\
     Erproben Sie ebenfalls den Regler auf Approximationsbasis!\vspace{1em}
     
-    \begin{quote}
-        
-    \end{quote}
     
-    
-    \subsection{Vergleich der Messergebnisse}
-    
-    Aufgabe:\\
-    Vergleichen Sie ihre Messergebnisse untereinander und mit den Simulationen!
     
     \begin{quote}
+        Nun haben wir alle drei Regler nacheinander implementiert und getestet. Wir haben, um die Führungssprungantwort zu
+        messen, einen Sprung von $30^{\circ}$ nach $61^{\circ}$ auf die Regelstrecke gegeben.
         
+        \begin{figure}[H]
+            \centering\fbox{
+            \includegraphics[scale=1, trim = 1cm 0.5cm 1cm 1cm, clip]{Bilder/5}}
+            \caption{Gemessene Führungssprungantwort}
+            \label{fig:5}
+        \end{figure}
+        \vspace{1em}
+        
+        Unerwarteter Weise verhält sich das System überhaupt nicht wie Simuliert. Bei näheren Nachforschungen ergab
+        sich, dass sich die Parameter der echten Strecke zu stark von denen des vorgegeben Modells unterscheiden hatten. Die
+        Einstellungen des Systems waren beim Versuchsaufbau deutlich anders als wir bem Entwurf der Regler angenommen
+        hatten.\\
+        Vor allem war die Streckenverstärkung deutlich geringer als wir angenommen hatten, weshalb die Verstärkung
+        unserer Regler nicht ausreichend war. In Abb. \ref{fig:5} ist deutlich zu erkennen, dass es alle
+        unsere Regler nach 15 Sekunden gerade einmal geschafft haben auf $40^{\circ}$ zu heizen obwohl sie schon nach
+        ca. 5 Sekunden bei $60^{\circ}$ sein sollten.\\
+        Somit sind die Messergebnisse offensichtlich nicht mit den Simulierten vergleichbar. Aufgrund des falschen
+        Reglerentwurfs sind leider auch keine rückschlüsse auf die Eignung Bzw. Qualität der Regler möglich.
+        
+        
+
+
     \end{quote}
     
     
