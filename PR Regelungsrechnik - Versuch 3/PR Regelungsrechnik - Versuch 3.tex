@@ -115,8 +115,10 @@
     
     \subsection{Reglerentwurf für die Strecke $\hat{G}$}
     Aufgabe:\\
-    Es soll ein Regler für das approximierte Streckenmodell $\tilde{G}$ mittels Polvorgabe entworfen werden, der
+    Es soll ein Regler für das approximierte Streckenmodell $\tildeoderhat{G}$ mittels Polvorgabe entworfen werden, der
     folgende Eigenschaften des geschlossenen Kreises ermöglicht:
+        
+        \TODO{tilde oder hat?}
         
         \begin{itemize}
             
@@ -141,13 +143,7 @@
             mit Ihrem Sollpolpolynom auf und berechnen sie die Reglerparameter mithilfe von Scilab.
         
         \end{enumerate}\vspace{1em}
-        
-        Das approximierte Streckenmodell $\tilde{G}$ allein hat die Ordnung $n = 3$. Da der Regler einen
-        Integratoranteil besitzen soll und wir den Reglerentwurf wählen bei dem dieser Integrator im nachhinein
-        an einen Regler multipliziert wird, der für die Strecke $K $ 
-        
-        
-        
+       
         Mit dem Regleransatz\\
         
         \begin{equation*}
@@ -157,12 +153,47 @@
         \end{equation*}\vspace{1em}
         
     \begin{quote}
+      
+        Das approximierte Streckenmodell $\hat{G}$ allein hat die Ordnung $n = 3$. Da der Regler einen
+        Integratoranteil besitzen soll und wir den Reglerentwurf wählen bei dem dieser Integrator im nachhinein
+        an einen Regler multipliziert wird, müssen wir die Strecke anpassen und erhalten eine neue Streckenordnung von
+        $n = 4$. Daraus folgt, dass die zu berechnende Sylvestermatrix $8\cdot 8$ Einträge und das Sollpolynom 8
+        Einträge besitzen muss. Um das zu realisieren müssen wir insgesamt 7 Pole vorgeben, da der letzte Eintrag des
+        Sollpolynoms der Koeffizent vor dem $s^0$ ist.\\
         
-        haben wir den folgenden Regler entworfen:
+        Neben dem Pol bei $s_\infty = -2$ und den zwei Polen des Polpaares benötigen wir noch genau 4 Pole aus der
+        veränderten Strecke. Unsere Strecke ergibt sich aus:
         
-        \TODO{Regler}
+        \begin{equation*}
+        	\begin{split}
+        		\hat{G_I} = \hat{G} \frac{1}{s}
+        	\end{split}
+        \end{equation*}
         
+        und hat genau 4 Pole.\\
         
+        Insgesamt ergibt sich daraus das folgende Sollpolpolynom:
+        
+        \begin{equation*}
+        	\begin{split}
+        		q_{soll} = 32.148065s + 177.77307s^2 + 285.03595s^3 + 208.51884s^4 + 77.572633s^5 + 14.179911s^6 + s^7  
+        	\end{split}
+        \end{equation*}
+        \vspace{1em}
+        
+        Anschließend haben wir die Sylvestermatrix aufgestellt und mithilfe des Sollpolpolynoms die Koeffizenten des
+        Reglers errechnet.\\
+        Unser Regler sieht folgendermaßen aus:
+        
+        \begin{equation*}
+        	\begin{split}
+        		KposI = \frac{14.231104 +  56.480246s +  26.455258s^2 +  3.1456906s^3}{62.570515s +  28.849556s^2 +  5s^3}
+        	\end{split}
+        \end{equation*}
+        
+        Damit entspricht er dem geforderten Regleransatz.\\
+        Die Kontrolle der Polstellen des resultierenden geschlossenen Regelkreises ergibt, dass sie mit denen des
+        Sollpolpolynoms übereinstimmen.
     \end{quote}
     
     
@@ -177,7 +208,12 @@
         
         Der Smith-Prädiktor für die totzeitbehaftete Strecke einen unter Verwendung des Reglers aus \ref{aufg:3.1} ergab sich wie folgt:
         
-        \TODO{scicos-Ding}
+       \begin{figure}[H]
+        \centering
+            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/Smith-Praediktor}
+                \caption{Smith-Prädiktor}
+        \end{figure}
+    
         
     \end{quote}
     
@@ -281,6 +317,12 @@
             \end{center}
         
         \vspace{1em}
+    \begin{figure}[H]
+    \centering
+        \includegraphics[scale=0.4, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_1_Simulation}
+            \caption{Simulationsergebnisse}
+    \end{figure}
+  
         Anhand der 5 Simulationen mit steigender Totzeit lässt sich erkennen, dass die Sprungantwort zunehmend
         überschwingt. Bei dieser Simulation hat der Regler keine Ahnung von der Totzeit und erwartet eine sofortige
         Reaktion auf seine Reglung. Da diese jedoch erst verspätet bei dem Regler ankommt übersteuert er. Je größer die
@@ -409,7 +451,7 @@
     Arbeitspunkttemperatur!\vspace{1em}
     
     \begin{quote}
-        
+        simulation: start bei $30^{\circ}$ sprung um $31^{\circ}$
     \end{quote}
     
     \subsection{Führungssprung des PID-Reglers}
