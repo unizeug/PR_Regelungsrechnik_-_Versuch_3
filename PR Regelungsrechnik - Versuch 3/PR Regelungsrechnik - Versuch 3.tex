@@ -502,7 +502,7 @@
         unsere Regler nach 15 Sekunden gerade einmal geschafft haben auf $40^{\circ}$ zu heizen obwohl sie schon nach
         ca. 5 Sekunden bei $60^{\circ}$ hätten sein sollen.\\
         Somit sind die Messergebnisse offensichtlich nicht mit den Simulierten vergleichbar. Aufgrund des falschen
-        Reglerentwurfs sind leider auch keine rückschlüsse auf die Eignung Bzw. Qualität der Regler möglich.
+        Reglerentwurfs sind leider auch keine rückschlüsse auf die Eignung bzw. Qualität der Regler möglich.
         
         
 
@@ -521,6 +521,34 @@
 \section{Auswertung}
 \begin{quote}
     
+    \subsection{Auswirkungen von Totzeiten}
+    \begin{quote}
+        
+        Anhand der Simulationen haben wir beispielhaft herausgefunden wie sich Totzeiten auf ein Regelsystem
+        auswirken.\\
+        Falls die Totzeit eines Systems beim Reglerentwurf nicht berücksichtigt wird kommt es, je nach länge der
+        Verzögerung, zu Überschwingen der Sprungantwort. Genügend große Totzeiten können den Regler sogar instabil
+        werden laseen, falls der Regler während der Totzeit so doll weiter regelt, dass der Integrator über die
+        Begrenzung hinweg voll läuft und so eine art Windup-Effekt auftritt.\\ 
+        
+    \end{quote} % Sub: Auswirkungen von Totzeiten
+    
+    
+    \subsection{Reglerentwurf}
+    \begin{quote}
+        
+        Für den Reglerentwurf bei Strecken mit Totzeit hat sich in unseren Simulationen der Smith-Prädiktor
+        durchgesetzt. Sowohl das Führungssprung- als auch das Störverhalten waren besser als beim Regler mit Pad\'e
+        Approximation. Hierbei spielt es wahrscheinlich auch eine Rolle, dass bei letzterem für die Totzeit nur eine
+        Näherung verwand wird, wohingegen der Smith-Prädiktor eine genauere Verzögerungs\-komponente hat.\\
+        Schlussendlich hat der Smith-Prädiktor zwar eine höhere Reglergüte, der Reglerentwurf mittels einer
+        Approximierten Totzeit ist aber einfacher und mit weniger Aufwand um zu setzen..\\
+        
+    \end{quote} % Sub: Reglerentwurf
+    \vspace{1em}
+    
+    
+    
 \end{quote} %Ende Section Ergebnisse
 
 %--------------------------------------------------------------------
@@ -529,11 +557,11 @@
 
 \section{Scilabcode}
 \begin{quote}
-%     \lstinputlisting[
-%         caption={Scilab-script},
-%         language=scilab,
-%         label=lst:scilab]
-%         {./Scilab/Pendel2a.sce}
+    \lstinputlisting[
+        caption={Scilab-script},
+        language=scilab,
+        label=lst:scilab]
+        {./Scilab/Luft-Temperatur-Regelstrecke.sce}
 
 
 \end{quote} %Ende section
