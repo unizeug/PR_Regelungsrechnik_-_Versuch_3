@@ -2,7 +2,8 @@
 
 
 // Boris: cd "/Users/borishenckell/Documents/eclipse workspace/PR_Regelungsrtechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3"
-// Dirk: cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
+// Dirk: 
+//cd "/media/daten/workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Scilab/"
 
 
 
@@ -44,7 +45,7 @@ h2=csim('step',t1,P);
 //    plot2d(t1,h1)
 //    plot2d(t1,h2,2)
 //    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort PT2 Glied',4);
-//    xtitle('Sprungantworten', 'Zeit[s]', 'Temperatur [°c]')
+    xtitle('Sprungantworten', 'Zeit[s]', 'Temperatur [°c]')
 
 
 // Pade-Appriximation

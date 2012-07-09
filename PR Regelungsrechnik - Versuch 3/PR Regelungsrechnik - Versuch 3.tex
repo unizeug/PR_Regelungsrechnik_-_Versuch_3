@@ -236,87 +236,6 @@
     idealen $PT2$-Modell! Fügen Sie dem Modell solange größer werdende Totzeiten ($T_d = 0.4, 0.8, . . .$) hinzu, bis
     der Regelkreis instabil wird! Beschreiben Sie kurz, welchen Einfluss die Totzeit auf das Regelkreisverhalten
     hat!\vspace{1em}
-    
-    
-    
-    \begin{quote}
-            \begin{center}
-            
-                \begin{tabular}{ll}
-                \hspace{-2.5cm}
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_1_Td_0}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d$ = 0}
-                        \end{figure}
-                    \end{minipage}
-                    
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_1_Td_04}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d$ =0.4}
-                        \end{figure}
-                    \end{minipage}
-                
-                \end{tabular}
-            \end{center}
-
-            \begin{center}
-                \begin{tabular}{ll}
-                
-                \hspace{-2.5cm}
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_1_Td_08}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 0.8$}
-                        \end{figure}
-                    \end{minipage}
-                    
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_1_Td_12}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 1.2$}
-                        \end{figure}
-                    \end{minipage}
-                
-                \end{tabular}
-            \end{center}
-
-            \begin{center}
-                \begin{tabular}{ll}
-                
-                \hspace{-2.5cm}
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_1_Td_16}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 1.6$}
-                        \end{figure}
-                    \end{minipage}
-                    
-                    \begin{minipage}{0.6\textwidth}
-                        \begin{figure}[H]
-                            \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
-                            0cm, clip]
-                            {./Bilder/4_1_Td_16_600s}
-                              \caption{Sprungantwort PID Regler lin. Modell Totzeit $T_d = 1.6$ 600s}
-                        \end{figure}
-                    \end{minipage}
-                
-                \end{tabular}
-            \end{center}
-            
-            \vspace{1em}
-            
             
         \begin{figure}[H]
         \centering
@@ -350,17 +269,12 @@
     Webseite) unter einer sprungförmigen Referenz der Amplitude $+30^{\circ}C$ ! Kommentieren Sie kurz Ihre
     Beobachtungen!\vspace{1em}
     
-    \begin{quote}
-        \begin{figure}[H]
-        \centering
-            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_2_Td_04}
-                \caption{Sprungantwort PID Regler nicht-lin. Modell Totzeit $T_d = 0.4$}
-        \end{figure}
         
         Bei dieser Simulation wurde anstatt des linearisierten Modells der Stecke, ein nichtlinearisiertes Modell
         verwandt. Es fällt auf, dass bei diesem Modell die Temperatur des Arbeitspunktes von Anfang an konstant ist. Die
-        Sprungantwort reagiert mit einem etwas geringeren Überschwingen als das lineare Modelle mit der selben
-        Totzeit.\\
+        Sprungantwort reagiert mit auffallendem Überschwingen als das lineare Modelle mit der selben
+        Totzeit. Das liegt unserer Meinung nach an dem genaueren Modell der Strecke. Bisher wurde noch kein Versuch
+        unternommen die Totzeit zu kompensieren\\
         \vspace{1em}
         
         
@@ -370,16 +284,9 @@
     Aufgabe:\\
     Implementieren Sie ihren Smith-Prädiktor und simulieren Sie erneut! Was ändert sich, was bleibt gleich?\vspace{1em}
     
-    \begin{quote}
-        \begin{figure}[H]
-        \centering
-            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_3_Td_04}
-               \caption{Sprungantwort PID Regler nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
-        \end{figure}
         
-        Bei dieser Simulation wurde ein Smith-Prädiktor hinzugefügt. Er zeigt seine Aufwirkung auf die
-        Sprungantwort, in dem sie weicher verläuft und überhaupt nicht mehr überschwingt. Diese Sprungantwort hat den
-        besten verlauf, der bis hierher betrachteten Sprungantworten.\\
+        Bei dieser Simulation wurde ein Smith-Prädiktor hinzugefügt. Es ist ein auffallender Unterschied zu erkenne.
+        zwar schwingt die Antwort noch ein wenig über jedoch bei weitem nicht soviel wie ohne Smith-Prädiktor.
         \vspace{1em}
         
     \end{quote}
@@ -389,19 +296,11 @@
     Aufgabe:\\
     Implementieren Sie nun auch den Regler auf Basis der Pad\'e-Approximation und simulieren Sie einen Führungssprung
     $+30^{\circ} C$ ! Wie ist die Regelgüte im Vergleich zum PID-Regler mit Smith-Prädiktor?\vspace{1em}
-    
-    
-    \begin{quote}
-        \begin{figure}[H]
-        \centering
-            \includegraphics[scale=0.7, trim = 0cm 0cm 0cm 0cm, clip]{./Bilder/4_4_Td_04}
-                \caption{Sprungantwort PID Regler Pade (KposI) nicht-lin. Modell Smith-Prädiktor Totzeit $T_d = 0.4$}
-        \end{figure}
+   
         
-        Bei dem Regler mit Pad\'e Approximation verschlechtert sich das Sprungverhalten wieder auffällig. Es ist wieder
-        ein überschwingen zu erkennen. Das ist auch nicht verwunderlich, da unter anderem die Totzeit bei diesem Regeler
-        nur angenähert wurde, während die Totzeit beim Smith-Prädiktor durch ein ``Delay''-Block dargestellt wurde, der
-        genauer arbeitet als die Approximation.\\
+        Bei dem Regler mit Pad\'e Approximation verschlechtert sich das Sprungverhalten wieder. Das Überschwingen nimmt
+        zu und auch die reaktion verlangsamt sich. Das ist auch nicht verwunderlich, da unter anderem die
+        Totzeit bei diesem Regeler nur angenähert wurde, während die Totzeit beim Smith-Prädiktor durch ein ``Delay''-Block dargestellt wurde, der genauer arbeitet als die Approximation.\\
         \vspace{1em}
         
     \end{quote}
@@ -415,35 +314,10 @@
     
     \begin{quote}
     
-        \begin{center}
-            \begin{tabular}{ll}
-            
-            \hspace{-2.5cm}
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.4, trim = 0cm 0cm 0cm
-                        0cm, clip]
-                        {./Bilder/4_5_Td_04_K_tilde}
-                          \caption{Sprungantwort PID Regler nicht-lin. Modell Totzeit Strecke $T_d = 0.7$}
-                    \end{figure}
-                \end{minipage}
-                
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.4,trim = 0cm 0cm 0cm
-                        0cm, clip]
-                        {./Bilder/4_5_Td_04_KposI}
-                          \caption{Sprungantwort PID Regler(KposI) nicht-lin. Modell Totzeit Strecke $T_d = 0.7$ }
-                    \end{figure}
-                \end{minipage}
-            
-            \end{tabular}
-        \end{center}
-        \vspace{1em}
         
-        
-        Auch bei der Sprungantwort mit falscher Totzeit schwingt der Regler mit Smith-Prädiktor weniger über, ist also
-        deutlich stailer.
+        Bei der verwendeten Störung sind beide Sprungantworten wieder von einem Starken überschwingen geprägt. Jedoch
+        schwingt der Regler mit Smith-Prädiktor weniger über,
+        ist also deutlich stailer.
         Wir erwarten daher, dass er in jeder hinsicht besser ist als der Regler mit Pad\'e-Approximation.\\
         \vspace{1em}
         
