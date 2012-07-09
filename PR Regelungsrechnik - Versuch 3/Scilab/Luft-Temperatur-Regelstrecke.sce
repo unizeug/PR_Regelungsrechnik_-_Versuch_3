@@ -41,10 +41,10 @@ t1=[0:0.1:100];
 h1=csim('step',t1,GKgeschlossen_tilde);
 h2=csim('step',t1,P);
 
-//clf(15);scf(15);
-//    plot2d(t1,h1)
-//    plot2d(t1,h2,2)
-//    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort PT2 Glied',4);
+clf(15);scf(15);
+    plot2d(t1,h1)
+    plot2d(t1,h2,2)
+    legend('Sprungsantwort geschlossener Regelkreis',  'Sprungantwort PT2 Glied',4);
     xtitle('Sprungantworten', 'Zeit[s]', 'Temperatur [°c]')
 
 
