@@ -10,7 +10,7 @@ z = poly(0,'z');
 heater_ap = 10;
 temp_ap = 43;
 
-dead_steps_cos = 7; // Zeitdauer der Totzeit in Schritten je 100ms
+dead_steps_cos = 4; // Zeitdauer der Totzeit in Schritten je 100ms
 
 // NEU
 tmp.num =  0.0003508 - 0.0435529*z + 0.0423176*z^2 + 0.0070704*z^3 + 0.0166357*z^4 + 0.0089772*z^5 + 0.0034504*z^6;
