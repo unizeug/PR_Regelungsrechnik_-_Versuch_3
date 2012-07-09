@@ -5,7 +5,11 @@ load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungs
 load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_1_tau_12.dat');
 load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_1_tau_16.dat');
 load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Sprung.dat');
-//load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_1_tau_24.dat');
+load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_2_tau_04.dat');
+load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_3_tau_04.dat');
+load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_4_tau_04.dat');
+load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_5_1_tau_04.dat');
+load('./Documents/eclipse workspace/PR_Regelungsrechnik_-_Versuch_3/PR Regelungsrechnik - Versuch 3/Messwerte/Simulation/Nr_4_5_2_tau_04.dat');
 
 scf(1);clf(1);
 plot2d(Nr_4_1_tau_0.time,Sprung.values);
@@ -20,3 +24,14 @@ xlabel('Zeit [s]');
 ylabel('temp [°C]');
 legend('Sprung','tau = 0 s','tau = 0.4 s','tau = 0.8 s','tau = 1.2 s','tau = 1.6 s',2);
 //xtitel('Sprungantwort geschlossener Regelkreis lineare Strecke');
+
+scf(2);clf(2);
+plot2d(Nr_4_1_tau_0.time,Sprung.values);
+plot2d(Nr_4_1_tau_0.time,Nr_4_2_tau_04.values,9);
+plot2d(Nr_4_1_tau_0.time,Nr_4_3_tau_04.values,2);
+plot2d(Nr_4_1_tau_0.time,Nr_4_4_tau_04.values,3);
+plot2d(Nr_4_1_tau_0.time,Nr_4_5_1_tau_04.values,5);
+plot2d(Nr_4_1_tau_0.time,Nr_4_5_2_tau_04.values,7);
+xlabel('Zeit [s]');
+ylabel('temp [°C]');
+legend('Sprung','K_tilde nicht lin. Modell','Smith-Praediktor','Pade-Approximation','Stoerung Pade','Stoerung Smith',2);
