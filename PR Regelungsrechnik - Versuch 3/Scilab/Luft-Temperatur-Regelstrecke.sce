@@ -36,7 +36,7 @@ polpaar = roots(P.den);
 GKgeschlossen_tilde = (G_tilde*K_tilde)/(1+G_tilde*K_tilde);
 GKgeschlossen_tilde = syslin('c', clean(real(GKgeschlossen_tilde.num)),clean(real(GKgeschlossen_tilde.den)));
 
-t1=[0:0.1:100];
+t1=[0:0.1:10];
 //u=ones(1,length(t1))*0.1;
 h1=csim('step',t1,GKgeschlossen_tilde);
 h2=csim('step',t1,P);
